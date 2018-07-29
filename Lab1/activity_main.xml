@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_top20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <TextView
+        android:id="@+id/system"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/system"
+        android:textColor="@drawable/ic_launcher_background"
+        android:textSize="22sp"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guide_top20" />
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/system"
+        app:srcCompat="@mipmap/ic_launcher_round"
+        tools:layout_marginTop="20dp" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_right20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="20dp" />
+
+    <EditText
+        android:id="@+id/sid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="phone"
+        android:ems="10"
+        android:inputType="number"
+        android:textSize="18sp"
+        app:layout_constraintRight_toRightOf="@id/guide_right20"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:hint="请输入学号" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="请输入密码"
+        android:inputType="textPassword"
+        app:layout_constraintRight_toRightOf="@id/guide_right20"
+        app:layout_constraintTop_toBottomOf="@+id/sid"
+        tools:layout_marginTop="20dp"
+        />
+
+    <TextView
+        android:id="@+id/mid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="学号："
+        android:textColor="@drawable/ic_launcher_background"
+        android:textSize="18sp"
+        app:layout_constraintRight_toLeftOf="@id/sid"
+        app:layout_constraintBottom_toBottomOf="@id/sid"
+        app:layout_constraintTop_toTopOf="@+id/sid" />
+
+
+    <TextView
+        android:id="@+id/mpa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="密码："
+        android:textColor="@drawable/ic_launcher_background"
+        android:textSize="18sp"
+        app:layout_constraintRight_toLeftOf="@id/editText2"
+        app:layout_constraintBottom_toBottomOf="@id/editText2"
+        app:layout_constraintTop_toTopOf="@+id/editText2" />
+
+    <RadioGroup
+        android:id="@+id/icon_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editText2"
+        tools:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        >
+
+        <RadioButton
+            android:id="@+id/xuesheng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="学生"
+            android:textSize="18sp" />
+
+        <RadioButton
+            android:id="@+id/teacher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="教职工"
+            android:layout_marginLeft="10dp"
+            android:textSize="18sp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="20dp"
+        android:text="登录"
+        style="@style/Widget.AppCompat.Button"
+        android:background="@drawable/button_border"
+        android:textColor="#ffffff"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/cancel"
+        app:layout_constraintTop_toBottomOf="@id/icon_group" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_border"
+        android:text="注册"
+        android:textColor="#ffffff"
+        app:layout_constraintLeft_toRightOf="@id/ok"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/icon_group" />
+
+
+</android.support.constraint.ConstraintLayout>
